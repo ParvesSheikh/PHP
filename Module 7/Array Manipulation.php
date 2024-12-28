@@ -619,6 +619,8 @@ function sum($carry,$item){
 $result = array_reduce($numbers,"sum") ;
 echo $result ;
 
+// Output : 150 .
+
 // 46.  array_multisort() This function can be used to sort multiple arrays at once or a multi-
 // dimensional array by one or more dimensions.
 
