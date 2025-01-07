@@ -41,12 +41,11 @@ class House {
         echo $num1 + $num2 ;
     }
 }
-
 class Land extends House {
 
 }
-$SonObj = new Land () ;
-$SonObj->add() ;
+$landObj = new Land () ;
+$landObj->add() ;
 
 // Output : 120 
 
@@ -67,7 +66,6 @@ class YoungBro extends ElderBro {
     echo $num1 + $num2 ;
     }
 }
-
 $YoungObj = new YoungBro () ;
 $YoungObj->add() ;
 
@@ -82,14 +80,13 @@ class Wife {
         echo $num1 + $num2 ;
     }
 }
-
 class Daughter extends Wife {
     public function Inherit(){
         parent::add() ;
     }
 }
-$SonObj = new Daughter () ;
-$SonObj->Inherit() ;
+$daughterObj = new Daughter () ;
+$daughterObj->Inherit() ;
 
 // Output : 120
 
@@ -99,34 +96,33 @@ abstract class Phone {
     public function add(){
         $num1 = 50 ;
         $num2 = 70 ;
-        echo $num1 + $num2 ;
+        echo $num1 + $num2."\n" ;
     }
-}
-    
+}    
 class Watch extends Phone {
     public function Inherit(){
         parent::add() ;
     }
 }
-// $SonObj = new Phone () ;
-// $SonObj->add() ;
+// $phoneObj = new Phone () ;
+// $phoneObj->add() ;
 
-$SonObj = new Watch () ;
-$SonObj->Inherit() ;
+$watchObj = new Watch () ;
+$watchObj->Inherit() ;
 
 // Output : 120 .
 
 // 7.   Constructor in Inheritance
 
 class Fathers {
-        public function __construct(){
-       echo "This is father constructor." ;
+    public function __construct(){
+       echo "This is father constructor.\n" ;
     }
 }
 class Sons extends Fathers {
 
 }
-$SonObj = new Son () ;
+$sonsObj = new Sons () ;
 
 // Output : This is father constructor.
 
@@ -134,17 +130,19 @@ $SonObj = new Son () ;
 
 class Senior {
     public function __construct(){
-       echo "This is father constructor." ;
+       echo "This is Senior constructor.\n" ;
     }
 }
 class Junior extends Senior {
     public function __construct(){
-        echo "This is son's constructor." ;
+        parent::__construct() ;
+        echo "This is Junior constructor.\n" ;
      }
 }
-$SonObj = new Junior () ;
+$juniorObj = new Junior () ;
 
-// Output : This is son's constructor.
+// Output : This is Senior constructor.
+//          This is Junior constructor.
 
 // 9.   Final Keyword
 
@@ -161,7 +159,7 @@ class Father {
 }
 class Son extends Father {
     public function House(){
-        echo "You can access here." ;
+        echo "You can access here.\n" ;
      }
     // public function Land(){
     //     echo "You can't access here." ;
@@ -169,6 +167,8 @@ class Son extends Father {
 }
 $SonObj = new Son () ;
 $SonObj -> House() ;
+
+// Output : You can access here.
 
 // 10.  Static Properties & Methods
 
