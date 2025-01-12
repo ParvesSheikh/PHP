@@ -1,0 +1,3 @@
+<?php
+
+setcookie("Token1"," ") ;
