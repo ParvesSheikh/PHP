@@ -2,100 +2,100 @@
 
 // 1.   
 
-// $file = fopen("data1.text","a") ;
-// $data1 = "Hello from Ostad 123".PHP_EOL ;
-// fwrite($file,$data1) ;
-// echo "Done" ;
-// fclose($file) ;
+$file = fopen("data1.text","a") ;
+$data1 = "Hello from Ostad 123".PHP_EOL ;
+fwrite($file,$data1) ;
+echo "Done" ;
+fclose($file) ;
 
 // 2.
 
-// $books = [
-//     "Book 1",
-//     "Book 2",
-//     "Book 3",
-//     "Book 4",
-//     "Book 5"
-// ] ;
-// $file = fopen("data2.text","w") ;
-// foreach($books as $book){
-//     fwrite($file,$book.PHP_EOL) ;
-// }
-// echo "Done" ;
+$books = [
+    "Book 1",
+    "Book 2",
+    "Book 3",
+    "Book 4",
+    "Book 5"
+] ;
+$file = fopen("data2.text","w") ;
+foreach($books as $book){
+    fwrite($file,$book.PHP_EOL) ;
+}
+echo "Done" ;
 
 // 3.
 
-// $books = [
-//     "Book 6",
-//     "Book 7",
-//     "Book 8",
-//     "Book 9",
-//     "Book 10"
-// ] ;
-// $file = fopen("data2.text","a") ;
-// foreach($books as $book){
-//     fwrite($file,$book.PHP_EOL) ;
-// }
-// echo "Done" ;
+$books = [
+    "Book 6",
+    "Book 7",
+    "Book 8",
+    "Book 9",
+    "Book 10"
+] ;
+$file = fopen("data2.text","a") ;
+foreach($books as $book){
+    fwrite($file,$book.PHP_EOL) ;
+}
+echo "Done" ;
 
 // 4.
 
-// $file = fopen("data2.text","r") ;
-// while(!feof($file)){
-//     echo fgets($file) ;
-// }
+$file = fopen("data2.text","r") ;
+while(!feof($file)){
+    echo fgets($file) ;
+}
 
-// Alternative
+Alternative
 
-// $file = file("data2.text") ;
-// foreach($file as $line){
-//     echo $line ;
-// }
+$file = file("data2.text") ;
+foreach($file as $line){
+    echo $line ;
+}
 
 // 5.
 
-// $file = file("data2.text") ;
-// echo "Total books of count ".count($file) ;  
+$file = file("data2.text") ;
+echo "Total books of count ".count($file) ;  
 
-// Alternative
+Alternative
 
-// $content = file_get_contents("data2.text") ;
-// echo $content ;
-// $books = explode(PHP_EOL,$content) ;
-// echo "Total books count ".count($books) - 1 ;
+$content = file_get_contents("data2.text") ;
+echo $content ;
+$books = explode(PHP_EOL,$content) ;
+echo "Total books count ".count($books) - 1 ;
 
 // 6.
 
-// $item = <<<EOD
-//         Book 1
-//         Book 2
-//         Book 3
-//         Book 4
-//         Book 5
-//         EOD;
-// file_put_contents("data2.text",$item) ;
-// echo "Done" ;
+$item = <<<EOD
+        Book 1
+        Book 2
+        Book 3
+        Book 4
+        Book 5
+        EOD;
+file_put_contents("data2.text",$item) ;
+echo "Done" ;
 
-// Append Mood
+Append Mood
 
-// $item = <<<EOD
-//         Book 6
-//         Book 7
-//         Book 8
-//         Book 9
-//         Book 10
-//         EOD;
-// file_put_contents("data2.text",$item,FILE_APPEND) ;
-// echo "Done" ;
+$item = <<<EOD
+        Book 6
+        Book 7
+        Book 8
+        Book 9
+        Book 10
+        EOD;
+file_put_contents("data2.text",$item,FILE_APPEND) ;
+echo "Done" ;
 
 // 7. Use spl to read CSV
 
-// $file = new SplFileObject("Module9/Part2/Books.csv") ;
-// $file -> setFlags(SplFileObject::READ_CSV) ;
-// $file -> setCsvControl(",") ;
-// foreach($file as $row){
-//     echo $row[0] ."-". $row[1] ."-". $row[2].PHP_EOL ;
-// }
+$file = new SplFileObject("Module9/Part2/Books.csv") ;
+$file -> setFlags(SplFileObject::READ_CSV) ;
+$file -> setCsvControl(",") ;
+foreach($file as $row){
+    echo $row[0] ."-". $row[1] ."-". $row[2].PHP_EOL ;
+}
 
 // 8.
 
